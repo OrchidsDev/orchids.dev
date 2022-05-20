@@ -1,0 +1,16 @@
+title = 'Orchids'
+baseURL = '/'
+languageCode = 'zh-CN'
+hasCJKLanguage = true
+publishDir = 'public'
+timeZone = 'Local'
+staticDir = ['static']
+theme = 'orchid'
+
+
+
+[params]
+  author = 'Orchids'
+  motto = '路漫漫其修远兮, 吾将上下而求索.'
+  description = "orchids.dev"
+  theme = 'teal'
