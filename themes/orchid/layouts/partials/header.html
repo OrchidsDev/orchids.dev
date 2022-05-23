@@ -1,0 +1,20 @@
+<header id="header">
+  <nav id="navbar">
+    <a id="logo" href="{{ .Site.BaseURL }}">
+      <h1>{{ .Site.Title }}</h1>
+    </a>
+    <menu id="menu">
+      <ul class="menu-list">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <li class="menu-item {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+          <a href="{{ .URL }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </menu>
+    <button id="operate"></button>
+  </nav>
+</header>

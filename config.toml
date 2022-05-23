@@ -9,6 +9,32 @@ theme = 'orchid'
 
 
 
+[menu]
+  [[menu.main]]
+    identifier = "Home"
+    name = "首页"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "stack"
+    name = "stack"
+    url = "/stack/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "go"
+    name = "Go"
+    url = "/go/"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "soa"
+    name = "SOA"
+    url = "/soa/"
+    weight = 40
+
+
 [params]
   author = 'Orchids'
   motto = '路漫漫其修远兮, 吾将上下而求索.'
