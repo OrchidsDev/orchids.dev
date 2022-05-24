@@ -1,0 +1,86 @@
+@use 'sass:map';
+@use 'function' as function;
+@use 'theme' as *;
+
+
+// 字体大小
+@mixin font-size($property) {
+  font-size: function.variable($property);
+}
+
+// 行高
+@mixin line-height($property) {
+  line-height: function.variable($property);
+}
+
+// 字符间距
+@mixin letter-spacing($property) {
+  letter-spacing: function.variable($property);
+}
+
+// 边框
+@mixin border-radius($property) {
+  border-radius: function.variable($property);
+}
+
+// 超出省略
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+// 边框
+@mixin outline {
+  border-width: 1px;
+  border-style: solid;
+  @include border-color("border");
+}
+
+// 字体颜色
+@mixin color($property: "primary") {
+  color: function.variable($property);
+  @each $name, $theme in $themes {
+    [data-theme="#{$name}"] & {
+      color: map.get($theme, $property);
+    }
+  }
+}
+
+// 背景色
+@mixin background-color($property: "primary") {
+  background-color: function.variable($property);
+  @each $name, $theme in $themes {
+    [data-theme="#{$name}"] & {
+      background-color: map.get($theme, $property);
+    }
+  }
+}
+
+// 边框颜色
+@mixin border-color($property: "primary") {
+  border-color: function.variable($property);
+  @each $name, $theme in $themes {
+    [data-theme="#{$name}"] & {
+      border-color: map.get($theme, $property);
+    }
+  }
+}
+
+@mixin fill($property) {
+  fill: function.variable($property);
+  @each $name, $theme in $themes {
+    [data-theme="#{$name}"] & {
+      fill: map.get($theme, $property);
+    }
+  }
+}
+
+@mixin stroke($property) {
+  stroke: function.variable($property);
+  @each $name, $theme in $themes {
+    [data-theme="#{$name}"] & {
+      stroke: map.get($theme, $property);
+    }
+  }
+}

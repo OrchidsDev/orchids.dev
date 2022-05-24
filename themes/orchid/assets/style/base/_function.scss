@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use 'variable' as *;
+
+@function variable($property) {
+  @return var(--#{$property}, map.get($properties, $property));
+}
+
+@function pxToRem($px) {
+  @return $px / 16px * 1rem;
+}

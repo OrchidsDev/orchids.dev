@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use './base/variable' as *;
+
+:root {
+  @each $property in map.keys($properties) {
+    --#{$property}: #{map.get($properties, $property)};
+  }
+}
